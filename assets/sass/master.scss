@@ -14,7 +14,7 @@ body {
 	display: grid;
 	grid-template-rows: 56px 1fr 125px;
 	grid-template-columns: 1fr;
-	margin: 0 10%;
+	padding: 0 10%;
 }
 
 .gameFrame {
@@ -22,6 +22,7 @@ body {
 	width: 100%;
 	height: 100%;
 	display: grid;
+	margin: auto;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
 	.gameField {
@@ -50,15 +51,56 @@ body {
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
 		width: 100%;
-		height: 125px;
+		max-height: 200px;
 		margin: auto;
+		padding: 10px 0;
 		text-align: center;
 	}
 	.gameScore {
 		h2 {
 			font-size: 16px;
+			color: #fff;
+		}
+		span {
+			color: #263238;
+			font-weight: 600;
+			font-size: 28px;
 		}
 	}
 }
 
-@media only screen and (max-width) {}
+@media only screen and (min-width: 768px) {
+	.gridContainer {
+		padding: 0 15%;
+	}
+	.gameScoreContainer .gameScore h2 {
+		font-size: 20px;
+	}
+	.gameScoreContainer .gameScore span {
+		font-size: 36px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.gridContainer {
+		padding: 0 20%;
+	}
+	.gameScoreContainer .gameScore h2 {
+		font-size: 36px;
+	}
+	.gameScoreContainer .gameScore span {
+		font-size: 56px;
+	}
+}
+
+@media only screen and (min-width: 1680px) {
+	.gridContainer {
+		padding: 0 32%;
+	}
+	.gameScoreContainer .gameScore h2 {
+		font-size: 20px;
+	}
+	.gameScoreContainer .gameScore span {
+		font-size: 36px;
+	}
+}
