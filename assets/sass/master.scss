@@ -29,11 +29,11 @@ body {
 		border: 2px solid #263238;
 		padding: 25%;
 		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
 		cursor: pointer;
-		svg {
-			fill: #69F0AE;
-			z-index: 15;
-		}
 	}
 	.gameField:hover {
 		background-color: rgba(0, 230, 118, 0.1);
@@ -102,5 +102,53 @@ body {
 	}
 	.gameScoreContainer .gameScore span {
 		font-size: 36px;
+	}
+}
+
+#circleSvg {
+	#path {
+		stroke-dasharray: 628.3185307179587;
+		animation: circle 0.5s linear forwards;
+		@keyframes circle {
+			0% {
+				stroke-dashoffset: 628.3185307179587;
+			}
+			100% {
+				stroke-dashoffset: 0;
+			}
+		}
+	}
+}
+
+#lineSvg {
+	width: 60px;
+	margin: auto;
+	display: block;
+	#line {
+		stroke-dasharray: 180;
+		animation: line 0.5s linear forwards;
+		@keyframes line {
+			0% {
+				stroke-dashoffset: 180;
+			}
+			100% {
+				stroke-dashoffset: 0;
+			}
+		}
+	}
+	#line2 {
+		stroke-dasharray: 180;
+		animation: line2 0.5s linear forwards;
+	}
+	@keyframes line2 {
+		0% {
+			stroke-dashoffset: 180;
+		}
+		50% {
+			stroke-dashoffset: 180;
+		}
+		100% {
+			stroke-dashoffset: 0;
+		}
 	}
 }
