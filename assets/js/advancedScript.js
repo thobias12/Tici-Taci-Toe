@@ -14,11 +14,11 @@ for (let i = 0; i < gameFields.length; i++) {
 }
 
 function placeMove(field) {
-    if (playerId == 1 && !field.innerHTML.includes("svg")) {
+    if (playerId == 1 && !field.innerHTML.includes("stroke")) {
         field.innerHTML = svgCircle;
         checkScore(playerId, player1, parseInt(field.id));
         playerId++;
-    } else if (playerId == 2 && !field.innerHTML.includes("svg")) {
+    } else if (playerId == 2 && !field.innerHTML.includes("stroke")) {
         field.innerHTML = svgCross;
         checkScore(playerId, player2, parseInt(field.id));
         playerId--;
