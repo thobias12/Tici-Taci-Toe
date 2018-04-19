@@ -1,7 +1,7 @@
 let playerId = 1;
 let player1 = [];
 let player2 = [];
-let winCombinations = [123, 459, 789, 147, 258, 369, 159, 357];
+let winCombinations = ["123", "456", "789", "147", "258", "369", "159", "357"];
 let gameFrame = document.getElementById("gameFrame")
 let gameFields = gameFrame.querySelectorAll(".gameField");
 
@@ -30,8 +30,11 @@ function checkScore(playerId, playerScore, id) {
     playerScore = playerScore.sort(function (a, b) {
         return a - b
     }).join("");
-    if (playerScore.includes("456")) {
-        console.log("Player " + playerId + " Won!");
+    console.log(playerScore);
+    for (let i = 0; i < winCombinations.length; i++) {
+        if (playerScore.includes(winCombinations[i])) {
+            console.log("Player " + playerId + " Won!");
+        }
     }
 }
 
