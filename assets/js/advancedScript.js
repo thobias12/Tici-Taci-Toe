@@ -30,10 +30,7 @@ function placeMove(field) {
 function checkScore(playerId, playerScore, id) {
     moves++;
     playerScore.push(id);
-    if (moves == 9) {
-        console.log("tie");
-        moves = 0;
-    }
+
     for (let x = 0; x < winCombinations.length; x++) { // For every combination
         let match = 0;
         for (let i = 0; i < playerScore.length; i++) { // Check current playerScore against current combination index
@@ -43,12 +40,17 @@ function checkScore(playerId, playerScore, id) {
                 if (match == 3) {
                     if (playerId > 1) {
                         document.getElementById("player2Score").innerHTML = +1;
+                        moves = 0;
                     } else {
                         document.getElementById("player1Score").innerHTML = +1;
+                        moves = 0;
                     }
                 }
             }
         }
+    }
+    if (moves == 9) {
+        console.log("TIEIEIE");
     }
 }
 
