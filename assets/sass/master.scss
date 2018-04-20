@@ -36,7 +36,7 @@ body {
 		cursor: pointer;
 	}
 	.gameField:hover {
-		background-color: rgba(0, 230, 118, 0.1);
+		background-color: rgba(0, 230, 118, 0.05);
 	}
 }
 
@@ -53,7 +53,7 @@ body {
 		width: 100%;
 		max-height: 200px;
 		margin: auto;
-		padding: 10px 0;
+		padding: 12px 12px;
 		text-align: center;
 	}
 	.gameScore {
@@ -74,10 +74,10 @@ body {
 		padding: 0 15%;
 	}
 	.gameScoreContainer .gameScore h2 {
-		font-size: 20px;
+		font-size: 26px;
 	}
 	.gameScoreContainer .gameScore span {
-		font-size: 36px;
+		font-size: 46px;
 	}
 }
 
@@ -98,7 +98,7 @@ body {
 		padding: 0 32%;
 	}
 	.gameScoreContainer .gameScore h2 {
-		font-size: 20px;
+		font-size: 26px;
 	}
 	.gameScoreContainer .gameScore span {
 		font-size: 36px;
@@ -108,7 +108,7 @@ body {
 #circleSvg {
 	#path {
 		stroke-dasharray: 628.3185307179587;
-		animation: circle 0.5s linear forwards;
+		animation: circle 0.5s ease-in-out forwards;
 		@keyframes circle {
 			0% {
 				stroke-dashoffset: 628.3185307179587;
