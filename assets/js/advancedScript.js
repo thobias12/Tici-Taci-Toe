@@ -16,11 +16,7 @@ for (let i = 0; i < gameFields.length; i++) {
 }
 
 function placeMove(field) {
-    moves++;
-    if (moves == 9) {
-        // Tie
-        moves = 0;
-    } else if (playerId == 1 && !field.innerHTML.includes("stroke")) {
+    if (playerId == 1 && !field.innerHTML.includes("stroke")) {
         field.innerHTML = svgCircle;
         checkScore(playerId, player1, parseInt(field.id));
         playerId++;
@@ -32,7 +28,12 @@ function placeMove(field) {
 }
 
 function checkScore(playerId, playerScore, id) {
+    moves++;
     playerScore.push(id);
+    if (moves == 9) {
+        console.log("tie");
+        moves = 0;
+    }
     for (let x = 0; x < winCombinations.length; x++) { // For every combination
         let match = 0;
         for (let i = 0; i < playerScore.length; i++) { // Check current playerScore against current combination index
