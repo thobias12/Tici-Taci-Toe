@@ -1,6 +1,7 @@
 let playerId = 1;
 let player1 = [];
 let player2 = [];
+let moves = 0;
 
 let svgCross = '<svg viewBox="0 0 60 60" xml:space="preserve" id="lineSvg" xmlns="http://www.w3.org/2000/svg"><line class="svgInput" id="line" x1="0" y1="0" x2="60" y2="60" stroke="#69F0AE" stroke-width="2" /><line class="svgInput" id="line2" x1="0" y1="60" x2="60" y2="0" stroke="#69F0AE" stroke-width="2" /></svg>';
 let svgCircle = '<svg viewBox="0 0 320 320" xml:space="preserve" id="circleSvg" xmlns="http://www.w3.org/2000/svg"><circle class="svgInput" id="path" cx="160" cy="160" r="100" stroke="#69F0AE" fill="none" stroke-width="5" stroke-linecap="round"></circle></svg>';
@@ -15,7 +16,11 @@ for (let i = 0; i < gameFields.length; i++) {
 }
 
 function placeMove(field) {
-    if (playerId == 1 && !field.innerHTML.includes("stroke")) {
+    moves++;
+    if (moves == 9) {
+        // Tie
+        moves = 0;
+    } else if (playerId == 1 && !field.innerHTML.includes("stroke")) {
         field.innerHTML = svgCircle;
         checkScore(playerId, player1, parseInt(field.id));
         playerId++;
