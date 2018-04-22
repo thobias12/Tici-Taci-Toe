@@ -44,17 +44,17 @@ function checkScore(playerId, playerScore, id) {
 						a++;
 						document.getElementById("player2Score").innerHTML = a;
 						moves = 0;
-						document.getElementById("winScreen").style.display = "block";
+						document.getElementById("winScreen").style.display = "flex";
 						document.getElementById("winner").innerHTML = ("Player " + playerId + " Won");
-						setTimeout(clearBoard, 3000);
+						resetGame();
 					} else {
 						b = parseInt(document.getElementById("player1Score").innerHTML);
 						b++;
 						document.getElementById("player1Score").innerHTML = b;
 						moves = 0;
-						document.getElementById("winScreen").style.display = "none";
+						document.getElementById("winScreen").style.display = "flex";
 						document.getElementById("winner").innerHTML = ("Player " + playerId + " Won");
-						setTimeout(clearBoard, 3000);
+						resetGame();
 					}
 				}
 			}
@@ -62,12 +62,19 @@ function checkScore(playerId, playerScore, id) {
 	}
 	if (moves == 9) {
 		document.getElementById("tiesScore").innerHTML = +1;
-		document.getElementById("winner").innerHTML = ("Game was tie");
-		setTimeout(clearBoard, 3000);
+		document.getElementById("winScreen").style.display = "flex";
+		document.getElementById("winner").innerHTML = ("Game was tied");
 	}
 }
 
-function clearBoard() {
+
+//Reset Functions
+
+function resetGame() {
+	resetTimer = setTimeout(function () { resetFunction(); }, 10000);
+}
+
+function resetFunction() {
 	var elements = document.getElementsByClassName("svgInput");
 	playerId = 1;
 	player1 = [];
@@ -77,4 +84,9 @@ function clearBoard() {
 		elements[0].parentNode.removeChild(elements[0]);
 	}
 	document.getElementById("winScreen").style.display = "none";
+}
+
+function resetButton() {
+	clearTimeout(resetTimer);
+	resetFunction();
 }
