@@ -64,14 +64,16 @@ function checkScore(playerId, playerScore, id) {
 		document.getElementById("tiesScore").innerHTML = +1;
 		document.getElementById("winScreen").style.display = "flex";
 		document.getElementById("winner").innerHTML = ("Game was tied");
+		resetGame();
 	}
 }
-
 
 //Reset Functions
 
 function resetGame() {
-	resetTimer = setTimeout(function () { resetFunction(); }, 10000);
+	resetTimer = setTimeout(function () {
+		resetFunction();
+	}, 10000);
 }
 
 function resetFunction() {
